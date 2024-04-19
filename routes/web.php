@@ -74,3 +74,8 @@ Route::get('biodata/{name}/{bb}/{tb}', function ($a, $bb, $tb) {
         "hasil : $bmi <br>" .
         "keterangan : $ket";
 });
+
+//route optional parameter -> ditandai dengan ?
+Route::get('myname/{name?}', function($a = "silva"){
+    return 'my name is '.$a;
+});
