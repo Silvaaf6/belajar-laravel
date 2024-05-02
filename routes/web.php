@@ -2,6 +2,7 @@
 
 use App\Models\Barang;
 use App\Models\Post;
+use App\Models\Siswa;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -92,3 +93,53 @@ Route::get('/barang', function () {
     $data = Barang::all();
     return $data;
 });
+
+//menampilkan data yang telah diolah (view)
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/siswa', function () {
+    // $post = Post::all();
+    // $barang = Barang::all();
+    $siswa = Siswa::all();
+
+
+    // return view('tampil_post', compact('post'));
+    // return view('tampil_barang', compact('barang'));
+    return view('tampil_siswa', compact('siswa'));
+
+    // $siswa = Siswa::where('jenis kelamin','like','%laki-laki%')->get();
+    // $siswa = Siswa::where('agama', 'like', '%islam%')->get();
+    // $siswa = Siswa::where('jenis kelamin', 'like', '%perempuan%')->get();
+
+    // $siswa = new Siswa;
+    // $siswa->nama = "Surya";
+    // $siswa->jenis_kelamin = "laki-laki";
+    // $siswa->alamat = "Sukamenak";
+    // $siswa->agama = "konghucu";
+    // $siswa->telepon = 9876;
+    // $siswa->email = "Surya@gmail.com";
+    // $siswa->save();
+
+    // $siswa = Siswa::find(12);
+    // $siswa->nama = "Rasya";
+    // $siswa->jenis_kelamin = "laki-laki";
+    // $siswa->alamat = "Sukamenak";
+    // $siswa->agama = "konghucu";
+    // $siswa->telepon = 9006;
+    // $siswa->email = "rasya@gmail.com";
+    // $siswa->save();
+
+    // $siswa = Siswa::find(13);
+    // $siswa->nama = "Romo";
+    // $siswa->jenis_kelamin = "laki-laki";
+    // $siswa->alamat = "Sukamenak";
+    // $siswa->agama = "budha";
+    // $siswa->telepon = 1234;
+    // $siswa->email = "robby@gmail.com";
+    // $siswa->save();
+
+    return $siswa;
+});
+
