@@ -1,5 +1,9 @@
 <?php
 
+use App\Models\Merek;
+use App\Models\Produk;
+use App\Models\Pengguna;
+use App\Models\Telepon;
 use App\Models\Barang;
 use App\Models\Post;
 use App\Models\Siswa;
@@ -99,15 +103,23 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/siswa', function () {
+Route::get('/produk', function () {
     // $post = Post::all();
     // $barang = Barang::all();
-    $siswa = Siswa::all();
+    // $pengguna = Pengguna::all();
+    // $telepon = Telepon::all();
+    // $merek = Merek::all();
+    $produk = Produk::all();
 
 
     // return view('tampil_post', compact('post'));
     // return view('tampil_barang', compact('barang'));
-    return view('tampil_siswa', compact('siswa'));
+    // return view('pengguna', compact('pengguna'));
+    // return view('telepon', compact('telepon'));
+    // return view('merek', compact('merek'));
+    return view('produk', compact('produk'));
+
+
 
     // $siswa = Siswa::where('jenis kelamin','like','%laki-laki%')->get();
     // $siswa = Siswa::where('agama', 'like', '%islam%')->get();
@@ -140,6 +152,9 @@ Route::get('/siswa', function () {
     // $siswa->email = "robby@gmail.com";
     // $siswa->save();
 
-    return $siswa;
-});
+    // return $pengguna;
+    // return $telepon;
+    // return $merek;
+    return $tproduk;
 
+});
