@@ -4,31 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Produk</title>
+    <title>transaksi</title>
 </head>
 <body>
-    <h1><center>Data Table Produk</center></h1>
+    <h1><center>Data Table Transaksi</center></h1>
     <table border="1" align="center">
         <tr>
             <th>NO</th>
             <th>ID</th>
-            <th>Nama Produk</th>
+            <th>ID Barang</th>
+            <th>ID Pembeli</th>
             <th>Jumlah</th>
-            <th>Tanggal Produksi</th>
-            <th>ID Merk</th>
+            <th>Tanggal</th>
         </tr>
         @php $no = 1; @endphp
-        @foreach ($produk as $data)
+        @foreach ($transaksi as $data)
             <tr>
                 <td>{{ $no++ }}</td>
                 <td>{{ $data->id }}</td>
-                <td>{{ $data->nama_produk }}</td>
-                <td>{{ $data->jumlah }}</td>
-                <td>{{ $data->tanggal_produk}}</td>
-                <td>{{ $data->merek->nama_merek}}</td>
+                <td>{{ $data->barang2s->nama_barang }}</td>
+                <td>{{ $data->pembelis->nama_pembeli }}</td>
+                <td>{{ $data->jumlah}}</td>
+                <td>{{ $data->tanggal}}</td>
             </tr>
         @endforeach
-        
-    </table>
 </body>
 </html>

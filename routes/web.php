@@ -1,12 +1,8 @@
 <?php
 
-use App\Models\Merek;
-use App\Models\Produk;
-use App\Models\Pengguna;
-use App\Models\Telepon;
 use App\Models\Barang;
 use App\Models\Post;
-use App\Models\Siswa;
+use App\Models\Transaksi;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -103,23 +99,22 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/produk', function () {
+Route::get('/transaksi', function () {
     // $post = Post::all();
     // $barang = Barang::all();
     // $pengguna = Pengguna::all();
     // $telepon = Telepon::all();
     // $merek = Merek::all();
-    $produk = Produk::all();
-
+    // $produk = Produk::all();
+    $transaksi = Transaksi::all();
 
     // return view('tampil_post', compact('post'));
     // return view('tampil_barang', compact('barang'));
     // return view('pengguna', compact('pengguna'));
     // return view('telepon', compact('telepon'));
     // return view('merek', compact('merek'));
-    return view('produk', compact('produk'));
-
-
+    // return view('produk', compact('produk'));
+    return view('transaksi', compact('transaksi'));
 
     // $siswa = Siswa::where('jenis kelamin','like','%laki-laki%')->get();
     // $siswa = Siswa::where('agama', 'like', '%islam%')->get();
@@ -155,6 +150,6 @@ Route::get('/produk', function () {
     // return $pengguna;
     // return $telepon;
     // return $merek;
-    return $tproduk;
+    //return $transaksis;
 
 });
