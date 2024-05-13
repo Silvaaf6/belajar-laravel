@@ -3,6 +3,7 @@
 use App\Models\Barang;
 use App\Models\Post;
 use App\Models\Transaksi;
+use App\Models\Produk;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -99,14 +100,14 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/transaksi', function () {
+// Route::get('/transaksi', function () {
     // $post = Post::all();
     // $barang = Barang::all();
     // $pengguna = Pengguna::all();
     // $telepon = Telepon::all();
     // $merek = Merek::all();
     // $produk = Produk::all();
-    $transaksi = Transaksi::all();
+    // $transaksi = Transaksi::all();
 
     // return view('tampil_post', compact('post'));
     // return view('tampil_barang', compact('barang'));
@@ -114,7 +115,7 @@ Route::get('/transaksi', function () {
     // return view('telepon', compact('telepon'));
     // return view('merek', compact('merek'));
     // return view('produk', compact('produk'));
-    return view('transaksi', compact('transaksi'));
+    // return view('transaksi', compact('transaksi'));
 
     // $siswa = Siswa::where('jenis kelamin','like','%laki-laki%')->get();
     // $siswa = Siswa::where('agama', 'like', '%islam%')->get();
@@ -152,4 +153,21 @@ Route::get('/transaksi', function () {
     // return $merek;
     //return $transaksis;
 
+// });
+
+
+Route::get('/post', function () {
+    $post = Post::all();
+    return view('tampil_post', compact('post'));
+    return $post;
+});
+
+Route::get('/template', function () {
+    $posts = Post::all();
+    return view('template', compact('posts'));
+});
+
+Route::get('/template2', function () {
+    $produk = Produk::all();
+    return view('template2', compact('produk'));
 });

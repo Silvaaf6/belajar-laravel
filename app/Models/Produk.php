@@ -14,6 +14,6 @@ class Produk extends Model
 
     public function merek()
     {
-        return $this->BelongsTo(Merek::class, 'id_merek');
+        return $this->belongsTo(Merek::class, 'id_merek');
     }
 }

@@ -14,8 +14,10 @@
             <th>ID</th>
             <th>ID Barang</th>
             <th>ID Pembeli</th>
+            <th>Jenis Kelamin</th>
             <th>Jumlah</th>
             <th>Tanggal</th>
+            
         </tr>
         @php $no = 1; @endphp
         @foreach ($transaksi as $data)
@@ -24,6 +26,7 @@
                 <td>{{ $data->id }}</td>
                 <td>{{ $data->barang2s->nama_barang }}</td>
                 <td>{{ $data->pembelis->nama_pembeli }}</td>
+                <td>{{ $data->pembelis->jenis_kelamin }}</td>
                 <td>{{ $data->jumlah}}</td>
                 <td>{{ $data->tanggal}}</td>
             </tr>
