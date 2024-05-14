@@ -33,11 +33,11 @@
                 
                 <div class="col-4">
                     <div class="card" style="width: 18rem;">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img src="https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p2/148/2024/02/20/Untitled-design-4-1877430769.png" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">{{$data->title}}</h5>
                             <p class="card-text">{{$data->content}}</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <a href="/post/{{$data->id}}" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
                 </div>

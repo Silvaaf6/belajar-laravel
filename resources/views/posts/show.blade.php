@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-    <title>template</title>
+    <title>show</title>
 </head>
 
 <body>
@@ -23,28 +23,21 @@
         <div class="container">
             <div class="row mt-5">
                 <center>
-                    <h3>List Artikel</h3>
+                    <h3>Show Artikel</h3>
                 </center>
             </div>
             <div class="row mt-5">
-
-                @foreach ($produk as $data)
-                    <div class="col-4 mt-5">
-                        <div class="card" style="width: 18rem;">
-                            <img src="https://cf.shopee.co.id/file/555ff775dd0acd16999c078cb0275590" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $data->id }}</h5>
-                                <p class="card-text">{{ $data->nama_produk }}</p>
-                                <p class="card-text">{{ $data->jumlah }}</p>
-                                <p class="card-text">{{ $data->tanggal_produk }}</p>
-                                <p class="card-text">{{ $data->merek->nama_merek }}</p>
-
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p2/148/2024/02/20/Untitled-design-4-1877430769.png"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{$posts->title}}</h5>
+                            <p class="card-text">{{$posts->content}}</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
-                @endforeach
-
+                </div>
             </div>
         </div>
     </div>

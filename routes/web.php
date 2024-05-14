@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\MerkController;
+
+use App\Models\Merek;
 use App\Models\Barang;
 use App\Models\Post;
-use App\Models\Transaksi;
 use App\Models\Produk;
 use Illuminate\Support\Facades\Route;
 
@@ -101,60 +105,59 @@ Route::get('/about', function () {
 });
 
 // Route::get('/transaksi', function () {
-    // $post = Post::all();
-    // $barang = Barang::all();
-    // $pengguna = Pengguna::all();
-    // $telepon = Telepon::all();
-    // $merek = Merek::all();
-    // $produk = Produk::all();
-    // $transaksi = Transaksi::all();
+// $post = Post::all();
+// $barang = Barang::all();
+// $pengguna = Pengguna::all();
+// $telepon = Telepon::all();
+// $merek = Merek::all();
+// $produk = Produk::all();
+// $transaksi = Transaksi::all();
 
-    // return view('tampil_post', compact('post'));
-    // return view('tampil_barang', compact('barang'));
-    // return view('pengguna', compact('pengguna'));
-    // return view('telepon', compact('telepon'));
-    // return view('merek', compact('merek'));
-    // return view('produk', compact('produk'));
-    // return view('transaksi', compact('transaksi'));
+// return view('tampil_post', compact('post'));
+// return view('tampil_barang', compact('barang'));
+// return view('pengguna', compact('pengguna'));
+// return view('telepon', compact('telepon'));
+// return view('merek', compact('merek'));
+// return view('produk', compact('produk'));
+// return view('transaksi', compact('transaksi'));
 
-    // $siswa = Siswa::where('jenis kelamin','like','%laki-laki%')->get();
-    // $siswa = Siswa::where('agama', 'like', '%islam%')->get();
-    // $siswa = Siswa::where('jenis kelamin', 'like', '%perempuan%')->get();
+// $siswa = Siswa::where('jenis kelamin','like','%laki-laki%')->get();
+// $siswa = Siswa::where('agama', 'like', '%islam%')->get();
+// $siswa = Siswa::where('jenis kelamin', 'like', '%perempuan%')->get();
 
-    // $siswa = new Siswa;
-    // $siswa->nama = "Surya";
-    // $siswa->jenis_kelamin = "laki-laki";
-    // $siswa->alamat = "Sukamenak";
-    // $siswa->agama = "konghucu";
-    // $siswa->telepon = 9876;
-    // $siswa->email = "Surya@gmail.com";
-    // $siswa->save();
+// $siswa = new Siswa;
+// $siswa->nama = "Surya";
+// $siswa->jenis_kelamin = "laki-laki";
+// $siswa->alamat = "Sukamenak";
+// $siswa->agama = "konghucu";
+// $siswa->telepon = 9876;
+// $siswa->email = "Surya@gmail.com";
+// $siswa->save();
 
-    // $siswa = Siswa::find(12);
-    // $siswa->nama = "Rasya";
-    // $siswa->jenis_kelamin = "laki-laki";
-    // $siswa->alamat = "Sukamenak";
-    // $siswa->agama = "konghucu";
-    // $siswa->telepon = 9006;
-    // $siswa->email = "rasya@gmail.com";
-    // $siswa->save();
+// $siswa = Siswa::find(12);
+// $siswa->nama = "Rasya";
+// $siswa->jenis_kelamin = "laki-laki";
+// $siswa->alamat = "Sukamenak";
+// $siswa->agama = "konghucu";
+// $siswa->telepon = 9006;
+// $siswa->email = "rasya@gmail.com";
+// $siswa->save();
 
-    // $siswa = Siswa::find(13);
-    // $siswa->nama = "Romo";
-    // $siswa->jenis_kelamin = "laki-laki";
-    // $siswa->alamat = "Sukamenak";
-    // $siswa->agama = "budha";
-    // $siswa->telepon = 1234;
-    // $siswa->email = "robby@gmail.com";
-    // $siswa->save();
+// $siswa = Siswa::find(13);
+// $siswa->nama = "Romo";
+// $siswa->jenis_kelamin = "laki-laki";
+// $siswa->alamat = "Sukamenak";
+// $siswa->agama = "budha";
+// $siswa->telepon = 1234;
+// $siswa->email = "robby@gmail.com";
+// $siswa->save();
 
-    // return $pengguna;
-    // return $telepon;
-    // return $merek;
-    //return $transaksis;
+// return $pengguna;
+// return $telepon;
+// return $merek;
+//return $transaksis;
 
 // });
-
 
 Route::get('/post', function () {
     $post = Post::all();
@@ -162,12 +165,13 @@ Route::get('/post', function () {
     return $post;
 });
 
-Route::get('/template', function () {
-    $posts = Post::all();
-    return view('template', compact('posts'));
-});
+Route::get('post', [PostController::class, 'menampilkan']);
+Route::get('post/{id}', [PostController::class, 'show']);
 
-Route::get('/template2', function () {
-    $produk = Produk::all();
-    return view('template2', compact('produk'));
-});
+Route::get('produk', [ProdukController::class, 'produk']);
+Route::get('produk/{id}', [ProdukController::class, 'show']);
+
+Route::get('merek', [MerkController::class, 'merek']);
+Route::get('merek/{id}', [MerkController::class, 'show']);
+
+
