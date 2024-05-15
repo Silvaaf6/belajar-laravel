@@ -23,7 +23,7 @@
         <div class="container">
             <div class="row mt-5">
                 <center>
-                    <h3>List Artikel</h3>
+                    <h3>List Merk</h3>
                 </center>
             </div>
             <div class="row mt-5">

@@ -4,10 +4,13 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\MerkController;
 
+
+
 use App\Models\Merek;
 use App\Models\Barang;
 use App\Models\Post;
 use App\Models\Produk;
+use App\models\Brand;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -175,3 +178,11 @@ Route::get('merek', [MerkController::class, 'merek']);
 Route::get('merek/{id}', [MerkController::class, 'show']);
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// CRUD BRAND
+use App\Http\Controllers\BrandController;
+Route::resource('brand', BrandController::class);

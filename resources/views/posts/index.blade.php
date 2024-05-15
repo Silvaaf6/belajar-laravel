@@ -23,14 +23,12 @@
         <div class="container">
             <div class="row mt-5">
                 <center>
-                    <h3>List Artikel</h3>
+                    <h3>List Post</h3>
                 </center>
             </div>
             <div class="row mt-5">
 
                 @foreach ($posts as $data)
-                    
-                
                 <div class="col-4">
                     <div class="card" style="width: 18rem;">
                         <img src="https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p2/148/2024/02/20/Untitled-design-4-1877430769.png" class="card-img-top" alt="...">
