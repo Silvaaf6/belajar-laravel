@@ -12,6 +12,12 @@ class BrandController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $brand = Brand::all();
@@ -62,7 +68,8 @@ class BrandController extends Controller
      */
     public function edit($id)
     {
-        //
+        $brand = Brand::findOrFail($id);
+        return view('brands.edit', compact('brand'));
     }
 
     /**
@@ -74,7 +81,10 @@ class BrandController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $brand = Brand::findOrFail($id);
+        $brand->name_brand = $request->name_brand;
+        $brand->save();
+        return redirect()->route('brand.index');
     }
 
     /**
@@ -85,6 +95,8 @@ class BrandController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $brand = Brand::findOrFail($id);
+        $brand->delete();
+        return redirect()->route('brand.index');
     }
 }
